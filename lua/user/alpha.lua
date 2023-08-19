@@ -8,6 +8,8 @@ function M.config()
   local alpha = require "alpha"
   local dashboard = require "alpha.themes.dashboard"
   dashboard.section.header.val = {
+
+
     [[                               __                ]],
     [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
     [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
@@ -25,7 +27,7 @@ function M.config()
     dashboard.button("q", " " .. " Quit", ":qa<CR>"),
   }
   local function footer()
-    return "chrisatmachine.com"
+    return "Слава Україні!"
   end
 
   dashboard.section.footer.val = footer()
