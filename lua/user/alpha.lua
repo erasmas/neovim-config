@@ -27,7 +27,7 @@ function M.config()
     dashboard.button("q", " " .. " Quit", ":qa<CR>"),
   }
   local function footer()
-    return "Слава Україні!"
+    return "Україна Понад Усе"
   end
 
   dashboard.section.footer.val = footer()
