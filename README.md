@@ -158,7 +158,6 @@ Heres the wiki for installing new plugins refer to this: [wiki](https://github.c
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
 - [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
 - [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
-- [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 - [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim)
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
@@ -186,6 +185,7 @@ Heres the wiki for installing new plugins refer to this: [wiki](https://github.c
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim)
+- [oil.nvim](https://github.com/stevearc/oil.nvim)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ---
