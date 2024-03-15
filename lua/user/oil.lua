@@ -2,7 +2,6 @@
 
 local M = {
   "stevearc/oil.nvim",
-  commit = "dd432e7",
   event = "VeryLazy",
   dependencies = { "nvim-tree/nvim-web-devicons" },
 }
