@@ -50,10 +50,11 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Plugins --
+-- Vim
+keymap("n", "<leader>q", "<cmd>:wq<CR>", opts) -- quit saving
+keymap("n", "<leader>Q", "<cmd>:q!<CR>", opts) -- quit w/o saving
 
--- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+-- Plugins --
 
 -- Oil
 keymap("n", "<leader>o", ":Oil<CR>", opts)
