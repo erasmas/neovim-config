@@ -51,6 +51,7 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Vim
+keymap("n", "<leader>w", "<cmd>:w<CR>", opts)  -- save
 keymap("n", "<leader>q", "<cmd>:wq<CR>", opts) -- quit saving
 keymap("n", "<leader>Q", "<cmd>:q!<CR>", opts) -- quit w/o saving
 
