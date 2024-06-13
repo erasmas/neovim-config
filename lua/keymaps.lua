@@ -3,6 +3,21 @@ local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
 
+-- Mapping helpers ==========================================================
+local map = function(mode, lhs, rhs, desc, opts)
+  opts = opts or {}
+  opts.desc = desc
+  vim.keymap.set(mode, lhs, rhs, opts)
+end
+
+local imap = function (...) map("i", ...) end
+local nmap = function (...) map("n", ...) end
+local tmap = function (...) map("t", ...) end
+local nxmap = function (...) map({"n", "x"}, ...) end
+
+local L = function (key) return "<leader>" .. key end
+local C = function (cmd) return "<Cmd>" .. cmd .. "<CR>" end
+
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -60,12 +75,6 @@ keymap("n", "<leader>Q", "<cmd>:q!<CR>", opts) -- quit w/o saving
 -- Oil
 keymap("n", "<leader>o", ":Oil<CR>", opts)
 
--- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>gy", "<cmd>lua require'gitlinker.actions'.copy_to_clipboard<CR>", opts)
@@ -87,3 +96,7 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+
+nmap(L" ",   C"Pick files",                                       "Find files")
+nmap(L"sg",  C"Pick grep_live",                                   "Search files")

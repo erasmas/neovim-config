@@ -1,11 +1,19 @@
 local M = {
   "folke/which-key.nvim",
-  commit = "5224c261825263f46f6771f1b644cae33cd06995",
+  version = false,
   event = "VeryLazy",
 }
 
 function M.config()
-  require("which-key").setup {}
+  require("which-key").setup({})
+  local wk = require("which-key")
+  wk.register({
+    p = {
+      name = "Pick",
+      f = { function() require('mini.pick').start({ source = { items = vim.fn.readdir('.') } }) end, "Pick from files in current directory" },
+      g = { function() require('mini.pick').builtin.files({ tool = 'git' }) end, "Pick from git files" },
+    },
+  }, { prefix = "<leader>" })
 end
 
 return M
