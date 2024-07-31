@@ -7,13 +7,21 @@ local M = {
 function M.config()
   require("which-key").setup({})
   local wk = require("which-key")
-  wk.register({
-    p = {
-      name = "Pick",
-      f = { function() require('mini.pick').start({ source = { items = vim.fn.readdir('.') } }) end, "Pick from files in current directory" },
-      g = { function() require('mini.pick').builtin.files({ tool = 'git' }) end, "Pick from git files" },
-    },
-  }, { prefix = "<leader>" })
+  wk.add({
+      { "<leader>p", group = "Pick" },
+      { "<leader>pf",
+        function()
+          require('mini.pick').start({ source = { items = vim.fn.readdir('.') } })
+        end,
+        desc = "Pick from files in current directory"
+      },
+      { "<leader>pg",
+        function()
+          require('mini.pick').builtin.files({ tool = 'git' })
+        end,
+        desc = "Pick from git files"
+      },
+  })
 end
 
 return M
